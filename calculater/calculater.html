@@ -1,0 +1,64 @@
+<html>
+    <head>
+      <title>Creating the calculator for the html app that is used for the creation of the nifty app and the skills</title>
+      <link rel="Stylesheet" href="calculater.css">
+    </head>
+    <script>
+      var inputstring="";  
+      function updatestring(value)  
+      {  
+        inputstring=inputstring+value;
+        document.querySelector('input').value=inputstring;  
+      }
+      function deleteLast() {
+      inputstring = inputstring.slice(0, -1); // Update the inputstring
+      document.querySelector('input').value = inputstring; // Reflect in the input field
+    }
+    </script>
+    <body>
+      <div class="Container">
+        <div class="Calculater">
+            <form>
+              <div class="display">
+              <input type="text" name="display" style="width: 95%; background-color: white;" class="input">
+              </div>
+
+              <div >
+                <input type="button" value="AC" onclick="document.querySelector('input').value=' ';">
+                <input type="button" value="DE" onclick="deleteLast()">
+                <input type="button" value="." onclick="updatestring('.')">
+                <input type="button" value="/" onclick="updatestring('/')">
+              </div>
+
+              <div>
+                <input type="button" value="7" onclick="updatestring('7')">
+                <input type="button" value="8" onclick="updatestring('8')">
+                <input type="button" value="9" onclick="updatestring('9')">
+                <input type="button" value="*" onclick="updatestring('*')">
+              </div> 
+
+              <div>
+                <input type="button" value="6" onclick="updatestring('6')">
+                <input type="button" value="5" onclick="updatestring('5')">
+                <input type="button" value="4" onclick="updatestring('4')">
+                <input type="button" value="-" onclick="updatestring('-')">
+              </div> 
+
+              <div>
+                <input type="button" value="1" onclick="updatestring('1')">
+                <input type="button" value="2" onclick="updatestring('2')">
+                <input type="button" value="3" onclick="updatestring('3')">
+                <input type="button" value="+" onclick="updatestring('+')">
+              </div> 
+
+              <div>
+                <input type="button" value="00" onclick="updatestring('00')">
+                <input type="button" value="0" onclick="updatestring('0')">
+                <input type="button" value="=" onclick="document.querySelector('input').value=eval(inputstring);">
+                <input type="button" value="%" onclick="updatestring('%')">
+             </div>
+            </form>
+        </div>
+        
+      </div>
+    </body>
